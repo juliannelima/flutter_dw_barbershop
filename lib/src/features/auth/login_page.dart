@@ -84,9 +84,10 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Criar Conta',
                         style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     )
                   ],

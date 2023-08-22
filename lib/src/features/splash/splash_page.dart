@@ -46,22 +46,24 @@ class _SplashPageState extends State<SplashPage> {
             opacity: _animationOpacityLogo,
             onEnd: () {
               Navigator.of(context).pushAndRemoveUntil(
-                  PageRouteBuilder(
-                      settings: const RouteSettings(name: '/auth/login'),
-                      pageBuilder: (
-                        context,
-                        animation,
-                        secondaryAnimation,
-                      ) {
-                        return const LoginPage();
-                      },
-                      transitionsBuilder: (_, animation, __, child) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      }),
-                  (route) => false);
+                PageRouteBuilder(
+                  settings: const RouteSettings(name: '/auth/login'),
+                  pageBuilder: (
+                    context,
+                    animation,
+                    secondaryAnimation,
+                  ) {
+                    return const LoginPage();
+                  },
+                  transitionsBuilder: (_, animation, __, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                ),
+                (route) => false,
+              );
             },
             child: AnimatedContainer(
                 duration: const Duration(seconds: 1),
